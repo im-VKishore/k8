@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mytest-ifnotpresent
+  namespace: dev
+spec:
+  containers:
+  - name: testcontainer
+    image: tomcat
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    app: java
